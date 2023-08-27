@@ -1,0 +1,113 @@
+{"level":"error","message":"this.dao.getById is not a function"}
+{"level":"error","message":"this.dao.getById is not a function"}
+{"level":"fatal","message":"Prueba Fatal"}
+{"level":"error","message":"Prueba Error"}
+{"level":"error","message":"this.dao.getById is not a function"}
+{"level":"error","message":"userService.recoverPassword is not a function"}
+{"level":"error","message":"userService.recoverPassword is not a function"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'error')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'error')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'error')"}
+{"level":"error","message":"passwordToken is not defined"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'error')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'error')"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"sendEmail is not defined"}
+{"level":"error","message":"Cannot read properties of null (reading '_id')"}
+{"level":"error","message":"Cannot set properties of null (setting 'recoverPassword')"}
+{"level":"error","message":"Cannot destructure property 'title' of 'product' as it is undefined."}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'status')"}
+{"level":"error","message":"Cast to ObjectId failed for value \"64cfcd24490a33c791d0e16\" (type string) at path \"_id\" for model \"products\""}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"Cannot read properties of undefined (reading '_id')"}
+{"level":"error","message":"E11000 duplicate key error collection: 645434db1249f93564fef864_preEntrega3.products index: code_1 dup key: { code: \"Yrs23Bata\" }"}
+{"level":"error","message":"Incomplete Value"}
+{"level":"error","message":"Incomplete Value"}
+{"level":"error","message":"data must be a string or Buffer and salt must either be a salt string or a number of rounds"}
+{"level":"error","message":"User already exists"}
+{"level":"error","message":"User already exists"}
+{"level":"error","message":"User already exists"}
+{"level":"error","message":"Product not found"}
+{"level":"error","message":"Cannot read properties of null (reading 'owner')"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"Product not found"}
+{"level":"error","message":"Product not found"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'role')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'role')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'products')"}
+{"level":"error","message":"preCart is not defined"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'findIndex')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'findIndex')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'findIndex')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'findIndex')"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"Incorrect credentials"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"success is not defined"}
+{"level":"error","message":"success is not defined"}
+{"level":"error","message":"Cast to date failed for value \"26/8/2023, 12:45:23\" (type string) at path \"last_connection\""}
+{"level":"error","message":"Cast to date failed for value \"26/8/2023, 12:45:32\" (type string) at path \"last_connection\""}
+{"level":"error","message":"Cast to date failed for value \"26/8/2023, 12:49:12\" (type string) at path \"last_connection\""}
+{"level":"error","message":"Cannot read properties of undefined (reading 'push')"}
+{"level":"error","message":"User not found"}
+{"level":"error","message":"us is not defined"}
+{"level":"error","message":"sendProfile is not defined"}
