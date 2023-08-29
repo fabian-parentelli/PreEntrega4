@@ -82,7 +82,7 @@ const docUpload = async (req, res) => {
         logger.error(error.message);
         if (error instanceof UserNotFound) res.sendClientError(error.message);
         res.sendServerError(error.message);
-    }
+    };
 };
 
 export { registerUser, loginUser, current, recoverPassword, newPassword, changeRole, docUpload };

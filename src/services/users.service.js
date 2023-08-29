@@ -92,6 +92,16 @@ const changeRole = async (user) => {
     const userBD = await userManager.getByEmail(user.email);
     if (!userBD) throw new UserNotFound('User not found');
 
+    const documents = userBD.documents.map(item => ({ name: item.name.split('-')[1].split('.')[0] }));
+
+    const identification = documents.find(doc => doc.name === 'identificacion');
+    const proofAdress = documents.find(doc => doc.name === 'domicilio');
+    const accountState = documents.find(doc => doc.name === 'cuenta');
+    
+    if(user.role === 'user') {
+        if(!identification || !proofAdress || !accountState) 
+        throw new UserNotFound('You must upload all of the documents to become an premium user');
+    };
     const newRole = (userBD.role === "user") ? "premium" : "user";
 
     const role = await userManager.updateRole(user._id, newRole);
@@ -111,8 +121,6 @@ const docUpload = async (id, uploadedFiles, fileType) => {
         };
         user.documents.push({ ...obj });
     };
-
-    console.log(user.documents);
 
     const newDoc = await userManager.docUpload(user._id, user.documents);
     if (!newDoc) throw new UserNotFound('User not update');
