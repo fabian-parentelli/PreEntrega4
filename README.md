@@ -3,7 +3,7 @@ El Usuario Faraday es premium.
 charruarecord@gmail.com
 1234
 
-le pertenece un producto Congas Lp City id: 6506eca4aa4c66a0f1cbd68e.
+le pertenece un producto Congas Lp City id: 6506eca4aa4c66a0f1cbd68e
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
