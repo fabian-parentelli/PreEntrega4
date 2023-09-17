@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e) => {
     localStorage.setItem('token', data.data.accesToken);
 
     if(data) {
-        window.location.href = 'http://localhost:8080/products';
+        window.location.href = '/products';
     } else {
         window.location.reload();
     }

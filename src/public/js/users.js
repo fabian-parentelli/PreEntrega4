@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     user = await result.json();
 
     if (user.error || user.data.role !== 'admin') {
-        window.location.href = 'http://localhost:8080/login';
+        window.location.href = '/login';
     };
 });
 
