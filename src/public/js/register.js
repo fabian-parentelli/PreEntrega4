@@ -1,19 +1,29 @@
 const form = document.getElementById('registerForm');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async (e) => {
+
     e.preventDefault();
-    const data = new FormData(form);
-    const obj = {};
-    data.forEach((value, key) => obj[key] = value);
-    fetch('/api/sessions/register', {
+
+    const user = Object.fromEntries(new FormData(form));
+
+    const response = await fetch('/api/users/register', {
         method: 'POST',
-        body: JSON.stringify(obj),
+        body: JSON.stringify(user),
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
-    }).then(result => {
-        if (result.status === 200) {
-            window.location.replace('/');
-        }
     });
+
+    const content = await response.json();
+    if(content.data) {
+        Swal.fire({
+            text: `Bienvenido ${content.data.first_name}`,
+            toast: true,
+            position: "top-right",
+        });
+        setTimeout(() => {
+            window.location.replace('/');
+        }, 3000);
+    };
 });

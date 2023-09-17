@@ -47,7 +47,7 @@ app.use('/', vewsRouter.getRouter());
 app.use('/api/users', usersRouter.getRouter());
 app.use('/api/chats', chatRouter.getRouter());
 app.use('/mocking-products', mocksRouter);
-app.use('/loggerTest', logerTestRouter)
+app.use('/loggerTest', logerTestRouter);
 
 app.use(errorHandler);
 

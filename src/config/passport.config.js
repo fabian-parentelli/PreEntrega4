@@ -1,6 +1,4 @@
 import passport from 'passport';
-// import GitHubStragey from 'passport-github2';
-// import { userModel } from '../dao/models/user.model.js';
 import jwt from 'passport-jwt';
 import config from '../config/dotEnv.config.js';
 
@@ -19,40 +17,6 @@ const initializePassport = () => {
             return done(error);
         };
     }));
-
-    // passport.use('github', new GitHubStragey({
-    //     clientID: config.clienteId,
-    //     clientSecret: config.clienteSecret,
-    //     callbackURL: config.callBackUrl,
-    //     scope: ['user:email']
-    // }, async (accessToken, refreshToken, profile, done) => {
-    //     try {
-    //         const email = profile.emails[0].value;
-    //         const user = await userModel.findOne({ email });
-    //         if (!user) {
-    //             const newUser = {
-    //                 first_name: profile._json.name,
-    //                 last_name: ' ',
-    //                 age: 18,
-    //                 email,
-    //                 password: ' '
-    //             };
-    //             const result = await userModel.create(newUser);
-    //             done(null, result);
-    //         } else {
-    //             done(null, user)
-    //         };
-
-    //     } catch (error) {
-    //         return done(error);
-    //     };
-    // }));
-
-    // passport.serializeUser((user, done) => { done(null, user._id) });
-    // passport.deserializeUser(async (id, done) => {
-    //     const user = await userModel.findById(id);
-    //     done(null, user);
-    // });
 };
 
 export default initializePassport;

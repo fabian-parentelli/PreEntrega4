@@ -139,3 +139,30 @@
 {"level":"error","message":"role is not defined"}
 {"level":"error","message":"role is not defined"}
 {"level":"error","message":"You must upload all of the documents to become an premium user"}
+{"level":"error","message":"User already exists"}
+{"level":"error","message":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials z17-20020a4a9851000000b00573c4ea8668sm4635284ooi.47 - gsmtp"}
+{"level":"error","message":"Invalid login: 535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials v23-20020a9d69d7000000b006bc8b4a41dfsm4311995oto.3 - gsmtp"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"result is not defined"}
+{"level":"error","message":"Incomplete Value"}
+{"level":"error","message":"Incorrect credentials"}
+{"level":"error","message":"Incorrect credentials"}
+{"level":"error","message":"Incorrect credentials"}
+{"level":"error","message":"Incorrect credentials"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"You cannot add your own product to the cart"}
+{"level":"error","message":"You cannot add your own product to the cart"}

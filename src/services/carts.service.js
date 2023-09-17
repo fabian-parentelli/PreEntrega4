@@ -25,7 +25,6 @@ const addProductToCarts = async (cid, pid, { user }) => {
 
     if (user.role === 'premium') {
         if (product.owner.toString() === user._id.toString()) {
-            console.log('alerta');
             throw new CartNotFound('You cannot add your own product to the cart');
         };
     };

@@ -44,4 +44,13 @@ export default class UserRepository {
     lastConnection = async (id, date) => {
         await this.dao.lastConnection(id, date);
     };
+
+    deleteUsers = async (users) => {
+        const result = await this.dao.deleteUsers(users);
+        return result;
+    };
+
+    deleteUsersAdmin = async (id) => {
+        await this.dao.deleteUsersAdmin(id);
+    };
 };

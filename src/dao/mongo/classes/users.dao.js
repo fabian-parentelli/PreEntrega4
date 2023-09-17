@@ -35,4 +35,13 @@ export default class User {
     lastConnection = async (id, date) => {
         await userModel.updateOne({ _id: id }, { $set: { last_connection: date } });
     };
+
+    deleteUsers = async (users) => {
+        const userIds = users.map(user => user._id);
+        return await userModel.deleteMany({ _id: { $in: userIds } });
+    };
+
+    deleteUsersAdmin = async (id) => {
+        await userModel.findByIdAndRemove({_id : id})
+    };
 };

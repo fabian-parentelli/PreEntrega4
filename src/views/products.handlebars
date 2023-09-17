@@ -1,12 +1,13 @@
 <h1>Lista de productos</h1>
 
-<div>
-    <h1>Tu perfil</h1>
-    <p>{{user.first_name}}</p>
-    <p>{{user.email}}</p>
-    <p>{{user.age}}</p>
-    <p>{{user.role}}</p>
-    <a href="/api/sessions/logout"><button>Salir</button></a>
+<div class="login">
+    <h2>Tu perfil</h2>
+    <div>
+        <div id="perfil"></div>
+        <button class="salir">Salir</button>
+        <button class="btn" id="cartVew">Ver Carrito</button>
+        <a href="/purchase"><button class="btn">Finalizar Compra</button></a>
+    </div>
 </div>
 
 <div class="products">

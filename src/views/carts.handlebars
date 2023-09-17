@@ -1,17 +1,29 @@
 <h1>Carrito</h1>
+
+<div class="login">
+    <div>
+        <div id="perfil"></div>
+        <button class="salir">Salir</button>
+        <a href="/products"><button class="btn">Productos</button></a>
+        <a href="/purchase"><button class="btn">Finalizar Compra</button></a>
+    </div>
+</div>
+
 <div class="products">
     {{#each result}}
+        <p>_id : {{this._id}}</p>
+        {{#each products}}
         <div>
-            <p>_id : {{this._id}}</p>
-            {{#each products}}
             <h2>Producto: {{this.product.title}}</h2>
             <p>Precio: ${{this.product.price}}</p>
             <p>Productos agregados: {{this.quantity}}</p>
             <p>Descripcion: {{this.product.description}}</p>
             <p>Codigo: {{this.product.code}}</p>
             <p>Categoria: {{this.product.category}}</p>
-            {{/each}}
+            <button class="btnDelete salir" data-eliminar="eliminar-{{this.product._id}}">Eliminar Producto</button>
         </div>
+        {{/each}}
+        
     {{/each}}
 </div>
 <script src="/js/index.js"></script>

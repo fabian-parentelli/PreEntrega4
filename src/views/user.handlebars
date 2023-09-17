@@ -1,0 +1,14 @@
+<h1>Usuarios</h1>
+<div>
+    {{#each userPayload}}
+    <div>
+        <p>Nombre: {{first_name}}</p>
+        <p>Email: {{email}}</p>
+        <p>Rol: {{role}}</p>
+        <button class="role-change" data-id="{{id}}">Cambiar el rol</button>
+        <button class="delete-user" data-id="{{id}}">Eliminar Usuario</button>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/js/users.js"></script>

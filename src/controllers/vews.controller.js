@@ -76,4 +76,19 @@ const cart = async (req, res) => {
     };
 };
 
-export { chatVew, login, index, register, products, cart, password, whatEmail };
+const users = async (req, res) => {
+    try {
+        const usersBd = await userService.getAll();
+        const userPayload = usersBd.payload;
+        res.render('user', { userPayload })
+    } catch (error) {
+        logger.error(error.message);
+        res.render('carts', { error: 'Error', error });
+    };
+};
+
+const purchase = async (req, res) => {
+    res.render('purchase');
+};
+
+export { chatVew, login, index, register, products, cart, password, whatEmail, users, purchase };

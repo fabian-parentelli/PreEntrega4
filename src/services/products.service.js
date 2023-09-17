@@ -1,4 +1,7 @@
 import ProductRepository from '../repsitories/products.repository.js';
+import { getById as userGetById } from './users.service.js';
+import { sendEmail } from './mail.service.js';
+import { deleteProductsHtml } from '../utils/html/deleteProducts.js';
 import { ProductNotFound, DontHavePermission } from '../utils/custom-exceptions.js';
 
 const productManager = new ProductRepository();
@@ -72,11 +75,22 @@ const modifyProducts = async (id, product, user) => {
 
 const deleteProductsById = async (id, user) => {
 
+    const resultProduct = await productManager.getById(id);
+
     if (user.role === 'premium') {
-        const resultProduct = await productManager.getById(id);
         if (resultProduct.owner.toString() !== user._id) {
             throw new DontHavePermission("You don't have permissions to perfomr this action");
         };
+    };
+
+    const userBD = await userGetById(resultProduct.owner);
+    if(userBD && userBD.role === 'premium') {
+        const emailTo = {
+            to: userBD.email,
+            subject: 'Eliminamos un producto',
+            html: await deleteProductsHtml(userBD.first_name, resultProduct.title)
+        };
+        await sendEmail(emailTo);
     };
 
     const result = await productManager.deleteById(id);

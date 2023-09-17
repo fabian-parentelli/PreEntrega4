@@ -3,16 +3,18 @@ import CartRepository from '../repsitories/carts.repository.js';
 import { isValidPassword, generateToken, createHash, tokenPassword } from '../utils/utils.js';
 import { sendEmail } from './mail.service.js';
 import { recoverPassword_HTML } from '../utils/html/recoverPassword.js';
+import { deleteUsersHtml } from "../utils/html/deleteUsers.js";
 import { UserNotFound } from "../utils/custom-exceptions.js";
 import { __mainDirname } from '../utils/path.js';
+import moment from "moment";
 
 const userManager = new UserRepository();
 const cartManager = new CartRepository();
 
 const saveUser = async (user) => {
-    const { first_name, last_name, age, role, email, password } = user;
+    const { first_name, last_name, age, email, password } = user;
 
-    if (!first_name || !last_name || !role || !email || !password || !age) {
+    if (!first_name || !last_name || !email || !password || !age) {
         throw new UserNotFound('Incomplete Value');
     };
 
@@ -88,8 +90,8 @@ const newPassword = async (user, newPass) => {
     return { status: 'success', payload: user };
 };
 
-const changeRole = async (user) => {
-    const userBD = await userManager.getByEmail(user.email);
+const changeRole = async (id, user) => {
+    const userBD = await userManager.getById(id);
     if (!userBD) throw new UserNotFound('User not found');
 
     const documents = userBD.documents.map(item => ({ name: item.name.split('-')[1].split('.')[0] }));
@@ -97,9 +99,9 @@ const changeRole = async (user) => {
     const identification = documents.find(doc => doc.name === 'identificacion');
     const proofAdress = documents.find(doc => doc.name === 'domicilio');
     const accountState = documents.find(doc => doc.name === 'cuenta');
-    
-    if(user.role === 'user') {
-        if(!identification || !proofAdress || !accountState) 
+
+    if (user.role === 'user') {
+        if (!identification || !proofAdress || !accountState);
         throw new UserNotFound('You must upload all of the documents to become an premium user');
     };
     const newRole = (userBD.role === "user") ? "premium" : "user";
@@ -109,6 +111,20 @@ const changeRole = async (user) => {
 
     return { status: 'success', payload: role };
 };
+
+const changeRoleAdmin = async (id) => {
+
+    const userBD = await userManager.getById(id);
+    if (!userBD) throw new UserNotFound('User not found');
+
+    const newRole = (userBD.role === "user") ? "premium" : "user";
+
+    const role = await userManager.updateRole(id, newRole);
+    if (!userBD) throw new UserNotFound('User not found');
+
+    return { status: 'success', payload: role };
+};
+
 
 const docUpload = async (id, uploadedFiles, fileType) => {
     const user = await userManager.getById(id)
@@ -132,4 +148,70 @@ const lastConnection = async () => {
     await userManager.lastConnection();
 };
 
-export { saveUser, loginUser, recoverPassword, getById, newPassword, changeRole, lastConnection, docUpload };
+const getAll = async () => {
+    const users = await userManager.getAll();
+    if (!users) throw new UserNotFound('User not found');
+
+    const userReduce = users.map(user => ({
+        first_name: user.first_name,
+        email: user.email,
+        role: user.role,
+        id: user._id
+    }));
+
+    return { status: 'success', payload: userReduce };
+};
+
+const deleteUsers = async () => {
+    const users = await userManager.getAll();
+    if (!users) throw new UserNotFound('User not found');
+
+    const now = moment();
+    const inactiveUsers = users.filter(user => {
+        const lastConnection = moment(user.last_connection, 'D/M/YYYY, HH:mm:ss');
+        const diffMinutes = now.diff(lastConnection, 'days');
+        return diffMinutes > 2;
+    });
+
+    for (const user of inactiveUsers) {
+        const emailTo = {
+            to: user.email,
+            subject: 'Recuperar contraseña',
+            html: await deleteUsersHtml(user.first_name)
+        };
+        await sendEmail(emailTo);
+    };
+    console.log(userManager);
+    await userManager.deleteUsers(inactiveUsers);
+    return { status: 'success', delted: inactiveUsers };
+};
+
+const deleteUsersAdmin = async (id) => {
+    const users = await userManager.getAll();
+    if (!users) throw new UserNotFound('User not found');
+
+    await userManager.deleteUsersAdmin(id);
+    return { status: 'Success' };
+};
+
+const logoutUser = async ({ user }) => {
+    const date = new Date().toLocaleString();
+    await userManager.lastConnection(user._id, date);
+    return { status: 'success' };
+};
+
+export {
+    saveUser,
+    loginUser,
+    recoverPassword,
+    getById,
+    newPassword,
+    changeRole,
+    lastConnection,
+    docUpload,
+    getAll,
+    deleteUsers,
+    changeRoleAdmin,
+    deleteUsersAdmin,
+    logoutUser
+};
