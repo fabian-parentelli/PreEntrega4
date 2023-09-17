@@ -8,7 +8,6 @@ import errorHandler from './middlewares/errors/index.js';
 import { addLogger } from './services/logger.service.js';
 import { specs } from './docs/docs.js';
 
-
 import UsersRouter from './routes/users.router.js';
 import CartsRouter from './routes/carts.router.js';
 import ProductRouter from './routes/products.router.js';
@@ -51,7 +50,7 @@ app.use('/loggerTest', logerTestRouter);
 
 app.use(errorHandler);
 
-const server = app.listen(8080, () => console.log('Server runing in port 8080'));
+const server = app.listen(process.env.PORT, () => console.log(`Server runing in port ${process.env.PORT}`));
 
 const io = new Server(server);
 app.set('socketio', io);
