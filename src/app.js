@@ -26,7 +26,7 @@ const chatRouter = new ChatRouter();
 const vewsRouter = new VewsRouter();
 
 const app = express();
-// app.use(addLogger);
+app.use(addLogger);
 
 app.use('/api/docs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 
