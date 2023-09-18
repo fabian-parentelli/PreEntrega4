@@ -8,7 +8,10 @@ form.addEventListener('submit', async (e) => {
     const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify(userinfo),
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json' 
+        }
     });
 
     const data = await response.json();
@@ -18,8 +21,13 @@ form.addEventListener('submit', async (e) => {
             text: data.error,
             toast: true,
             position: "top-right",
+            showConfirmButton: false
         });
-        window.addEventListener('DOMContentLoaded', () => window.location.reload());
+
+        setTimeout(() => {
+
+            window.location.reload();
+        }, 3000);
     };
 
     if(data.data.accesToken) {
