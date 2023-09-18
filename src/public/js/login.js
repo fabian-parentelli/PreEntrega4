@@ -12,19 +12,14 @@ form.addEventListener('submit', async (e) => {
     });
 
     const data = await response.json();
-    console.log(data);
 
     if(data.error) {
-        console.log('entra al error');
         Swal.fire({
             text: data.error,
             toast: true,
             position: "top-right",
         });
-
-        setTimeout(() => {
-            window.location.reload();
-        }, 3000);
+        window.addEventListener('DOMContentLoaded', () => window.location.reload());
     };
 
     if(data.data.accesToken) {
