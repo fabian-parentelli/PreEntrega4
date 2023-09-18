@@ -12,11 +12,23 @@ form.addEventListener('submit', async (e) => {
     });
 
     const data = await response.json();
-    localStorage.setItem('token', data.data.accesToken);
+    console.log(data);
 
-    if(data) {
+    if(data.error) {
+        console.log('entra al error');
+        Swal.fire({
+            text: data.error,
+            toast: true,
+            position: "top-right",
+        });
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
+    };
+
+    if(data.data.accesToken) {
+        localStorage.setItem('token', data.data.accesToken);
         window.location.href = '/products';
-    } else {
-        window.location.reload();
-    }
+    };
 });
