@@ -19,7 +19,7 @@ const getByIdCart = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -33,7 +33,7 @@ const productToCart = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -46,7 +46,7 @@ const removeProduct = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -59,7 +59,7 @@ const modifyCart = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -72,7 +72,7 @@ const modifyQuantity = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -84,7 +84,7 @@ const eliminateAllProducts = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -105,7 +105,7 @@ const purchase = async (req, res) => {
 
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof CartNotFound) res.sendClientError(error.message);
+        if (error instanceof CartNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };

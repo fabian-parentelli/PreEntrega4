@@ -9,7 +9,7 @@ const registerUser = async (req, res) => {
         res.sendSuccess(result.payload);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -21,7 +21,7 @@ const loginUser = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -42,7 +42,7 @@ const recoverPassword = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -55,7 +55,7 @@ const newPassword = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -68,7 +68,7 @@ const changeRole = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -80,7 +80,7 @@ const changeRoleAdmin = async (req, res) => {
         if(result) res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -94,7 +94,7 @@ const docUpload = async (req, res) => {
         res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -105,7 +105,7 @@ const getAll = async (req, res) => {
         if (result) res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -116,7 +116,7 @@ const deleteUsers = async (req, res) => {
         if (result) res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -128,7 +128,7 @@ const deleteUsersAdmin = async (req, res) => {
         if (result) res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -140,7 +140,7 @@ const logoutUser = async (req, res) => {
         if (result) res.sendSuccess(result);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof UserNotFound) res.sendClientError(error.message);
+        if (error instanceof UserNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };

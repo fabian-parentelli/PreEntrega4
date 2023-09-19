@@ -9,7 +9,7 @@ const getAllProdducts = async (req, res) => {
         res.sendSuccess(result.payload);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof ProductNotFound) res.sendClientError(error.message);
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -21,8 +21,8 @@ const getByIdProduct = async (req, res) => {
         res.sendSuccess(result.payload);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof ProductNotFound) res.sendClientError(error.message);
-        if (error instanceof DontHavePermission) res.sendClientError(error.message);
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
+        if (error instanceof DontHavePermission) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -34,7 +34,7 @@ const createProduct = async (req, res) => {
         res.sendSuccess(result.payload);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof ProductNotFound) res.sendClientError(error.message);
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -47,8 +47,8 @@ const modifyProduct = async (req, res) => {
         res.sendSuccess(result.payload);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof ProductNotFound) res.sendClientError(error.message);
-        if (error instanceof DontHavePermission) res.sendClientError(error.message);
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
+        if (error instanceof DontHavePermission) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };
@@ -61,8 +61,8 @@ const deleteProduct = async (req, res) => {
         res.sendSuccess(result.payload);
     } catch (error) {
         logger.error(error.message);
-        if (error instanceof DontHavePermission) res.sendClientError(error.message);
-        if (error instanceof ProductNotFound) res.sendClientError(error.message);
+        if (error instanceof DontHavePermission) return res.sendClientError(error.message);
+        if (error instanceof ProductNotFound) return res.sendClientError(error.message);
         res.sendServerError(error.message);
     };
 };

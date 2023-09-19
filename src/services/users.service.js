@@ -52,7 +52,7 @@ const loginUser = async (email, password) => {
 
 const recoverPassword = async (email) => {
     const user = await userManager.getByEmail(email);
-    if (!user) throw new UserNotFound('User not found');
+    if (!user) throw new UserNotFound('User not found'); 
 
     user.recoverPassword = `http://localhost:8080/password/${user._id}`;
     const passwordToken = tokenPassword(user);
